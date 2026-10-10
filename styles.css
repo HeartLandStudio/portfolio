@@ -72,7 +72,24 @@ section { padding: 44px 0; }
 
 /* ---------- Главная ---------- */
 
-.hero { padding: clamp(64px, 12vh, 120px) 0 36px; text-align: center; }
+.hero { padding: clamp(48px, 8vh, 88px) 0 28px; text-align: center; }
+.hero .wrap {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.contacts.contacts--hero {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 14px;
+  width: min(920px, 100%);
+  margin: 0;
+  margin-top: 40px;
+  padding: 0;
+  list-style: none;
+  align-self: center;
+  box-sizing: border-box;
+}
 .hero h1 {
   font-size: clamp(32px, 6vw, 60px);
   letter-spacing: -.01em;
@@ -170,7 +187,7 @@ section { padding: 44px 0; }
   gap: 22px;
   max-width: 920px;
   margin-inline: auto;
-}
+ margin-top: 28px; }
 
 .pill-card {
   --c: var(--blue);
@@ -402,7 +419,9 @@ table.t tr:last-child td { border-bottom: 0; }
 
 @media (max-width: 860px) {
   .projects { grid-template-columns: 1fr; }
-  .contacts { grid-template-columns: 1fr; }
+  .contacts,
+  .contacts.contacts--hero { grid-template-columns: 1fr; }
+  .contacts.contacts--hero { width: 100%; margin-top: 28px; }
 }
 @media (max-width: 720px) {
   .pills { grid-template-columns: 1fr; gap: 16px; max-width: 480px; }
